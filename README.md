@@ -1,4 +1,4 @@
-Nombre del proyecto: Dream & Ride
+Nombre de la página: Dream & Ride
 
 Autor: Rodrigo Miranda
 
