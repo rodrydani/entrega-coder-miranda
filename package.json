@@ -1,0 +1,19 @@
+{
+  "name": "entrega-coder-miranda",
+  "version": "1.0.0",
+  "description": "Nombre de la página: Dream & Ride",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrydani/entrega-coder-miranda.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrydani/entrega-coder-miranda/issues"
+  },
+  "homepage": "https://github.com/rodrydani/entrega-coder-miranda#readme"
+}
