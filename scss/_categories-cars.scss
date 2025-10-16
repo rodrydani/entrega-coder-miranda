@@ -38,7 +38,7 @@
 
     a.btn {
       @include box($border-color: $color-primary, $padding: 0.5rem 1rem, $radius: $radius);
-      background-color: $color-primary;
+      background-color: $color-secondary;
       color: #fff;
       text-decoration: none;
       font-family: $font-main;

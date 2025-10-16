@@ -13,6 +13,10 @@ body {
   width: 150px;
 }
 
+.custom-nav {
+  background-color: #010221;
+}
+
 /*@include respond(tablet) {
   .car-card-inf img {
     width: 400px;
@@ -67,7 +71,7 @@ body {
   justify-content: flex-start;
   width: 220px;
   padding: 10px;
-  border: 3px solid #4227F2;
+  border: 3px solid #3B3936;
   border-radius: 10px;
   padding: 10px;
   border: 3px solid rgb(212, 208, 208);
@@ -181,10 +185,10 @@ h3 {
 }
 
 a.btn {
-  border: 3px solid #4227F2;
+  border: 3px solid #3B3936;
   border-radius: 10px;
   padding: 0.5rem 1rem;
-  background-color: #4227F2;
+  background-color: #FF9933;
   color: #fff;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
@@ -192,7 +196,7 @@ a.btn {
   transition: background-color 0.3s ease;
 }
 a.btn:hover {
-  background-color: #2BD999;
+  background-color: #EF6024;
 }
 
 @media (min-width: 600px) {
@@ -286,7 +290,7 @@ a.btn:hover {
   text-align: justify;
   padding: 15px;
   background-color: #f4f4f4;
-  border-left: 4px solid #4227F2;
+  border-left: 4px solid #3B3936;
   border-radius: 10px;
   width: 100%;
 }
@@ -306,10 +310,10 @@ form .form-check-label {
   color: #232625;
 }
 form button {
-  border: 3px solid #4227F2;
+  border: 3px solid #3B3936;
   border-radius: 10px;
   padding: 12px;
-  background-color: #4227F2;
+  background-color: #3B3936;
   color: white;
   font-weight: 600;
   cursor: pointer;
@@ -317,7 +321,7 @@ form button {
   transition: 0.3s;
 }
 form button:hover {
-  background-color: #2BD999;
+  background-color: #EF6024;
 }
 
 @media (min-width: 600px) {
@@ -360,13 +364,13 @@ form button:hover {
 }
 
 .categories-box {
-  border: 3px solid #4227F2;
+  border: 3px solid #3B3936;
   border-radius: 10px;
   padding: 25px;
   text-align: center;
   width: 200px;
   transition: 0.3s;
-  background-color: #4982A6;
+  background-color: #FF9933;
 }
 .categories-box a {
   text-decoration: none;
@@ -376,7 +380,7 @@ form button:hover {
   transition: 0.3s;
 }
 .categories-box a:hover {
-  color: #2BD999;
+  color: #EF6024;
   transform: scale(1.05);
 }
 
@@ -500,7 +504,7 @@ footer a {
   text-decoration: none;
 }
 footer a:hover {
-  color: #4227F2;
+  color: #3B3936;
 }
 footer .bg-secondary {
   background-color: #333 !important;
@@ -540,7 +544,7 @@ footer .bg-secondary {
 }
 .cont-car-inf .car-card-inf .descrip-text-car h3 {
   font-family: "Poppins", sans-serif;
-  color: #4227F2;
+  color: #3B3936;
   font-size: 1.1rem;
   margin-bottom: 0.3rem;
 }
@@ -551,10 +555,10 @@ footer .bg-secondary {
   margin: 0.2rem 0;
 }
 .cont-car-inf .car-card-inf a.btn {
-  border: 3px solid #4227F2;
+  border: 3px solid #3B3936;
   border-radius: 10px;
   padding: 0.5rem 1rem;
-  background-color: #4227F2;
+  background-color: #FF9933;
   color: #fff;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
@@ -562,7 +566,7 @@ footer .bg-secondary {
   transition: background-color 0.3s ease;
 }
 .cont-car-inf .car-card-inf a.btn:hover {
-  background-color: #2BD999;
+  background-color: #EF6024;
 }
 @media (min-width: 600px) {
   .cont-car-inf .car-card-inf {
