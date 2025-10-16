@@ -101,7 +101,8 @@ img {
   font-size: 15px;
 }
 
-.cont-payment-stimater, .cont-tem-months {
+.cont-payment-stimater,
+.cont-tem-months {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -235,8 +236,6 @@ a.btn:hover {
   .cont-car-fin-inf {
     flex-direction: column;
     justify-content: flex-start;
-    gap: 10px;
-    margin: 20px auto;
   }
   .img-car-financing,
   .inf-car-financing {
@@ -266,7 +265,6 @@ a.btn:hover {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  gap: 20px;
 }
 
 .form-contact-elements {
