@@ -139,7 +139,7 @@ h3 {
   align-items: center;
   width: 30px;
   height: 30px;
-  background-color: #B33F00;
+  background-color: #EF6024;
   color: white;
   font-weight: bold;
   font-size: 1.5rem;
@@ -376,7 +376,7 @@ form button:hover {
   text-decoration: none;
   color: #232625;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   transition: 0.3s;
 }
 .categories-box a:hover {

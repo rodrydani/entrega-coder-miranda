@@ -1,11 +1,10 @@
 .categories-links {
-  @include flex-center(column, 20px); // mixin flex-center
+  @include flex-center(column, 20px); 
   margin: 20px 0;
 }
 
-// Cada recuadro de categoría
 .categories-box {
-  @include box($color-primary, 25px, $radius); // mixin box con tus variables
+  @include box($color-primary, 25px, $radius); 
   text-align: center;
   width: 200px;
   transition: 0.3s;
@@ -14,7 +13,7 @@
     text-decoration: none;
     color: $color-text;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
     transition: 0.3s;
 
     &:hover {
@@ -24,7 +23,7 @@
   }
 }
 
-// ================= RESPONSIVE =================
+
 @include respond(tablet) {
 
   .categories-box {
