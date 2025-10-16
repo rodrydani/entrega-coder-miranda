@@ -1,0 +1,48 @@
+.categories-links {
+  @include flex-center(column, 20px); // mixin flex-center
+  margin: 20px 0;
+}
+
+// Cada recuadro de categoría
+.categories-box {
+  @include box($color-primary, 25px, $radius); // mixin box con tus variables
+  text-align: center;
+  width: 200px;
+  transition: 0.3s;
+  background-color: $color-secondary;
+  a {
+    text-decoration: none;
+    color: $color-text;
+    font-weight: 600;
+    font-size: 18px;
+    transition: 0.3s;
+
+    &:hover {
+      color: $color-hover;
+      transform: scale(1.05);
+    }
+  }
+}
+
+// ================= RESPONSIVE =================
+@include respond(tablet) {
+
+  .categories-box {
+    width: 250px;
+  }
+
+  .cate-main-cont{
+    margin: 20px;
+  }
+}
+
+@include respond(desktop) {
+  .categories-links {
+    @include flex-center(column, 40px);
+  }
+
+  .categories-box {
+    width: 300px;
+    padding: 30px;
+  }
+}

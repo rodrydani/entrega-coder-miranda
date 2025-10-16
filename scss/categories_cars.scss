@@ -1,0 +1,71 @@
+.cont-car-inf {
+  @include flex-center(row, 20px);
+  flex-wrap: wrap;
+  margin: 10px;
+
+  .car-card-inf {
+    @include flex-center(column);
+    justify-content: flex-start;
+    width: 220px;
+    padding: 10px;
+    @include box($border-color: $color-border, $padding: 10px, $radius: $radius);
+    text-align: center;
+    margin: 10px;
+
+    img {
+      width: 200px;
+      height: auto;
+      border-radius: $radius;
+    }
+
+    .descrip-text-car {
+      margin: 10px 0;
+
+      h3 {
+        font-family: $font-main;
+        color: $color-primary;
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+      }
+
+      p {
+        font-family: $font-main;
+        color: $color-text;
+        font-size: 0.9rem;
+        margin: 0.2rem 0;
+      }
+    }
+
+    a.btn {
+      @include box($border-color: $color-primary, $padding: 0.5rem 1rem, $radius: $radius);
+      background-color: $color-primary;
+      color: #fff;
+      text-decoration: none;
+      font-family: $font-main;
+      margin-top: 0.5rem;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $color-hover;
+      }
+    }
+  }
+
+  @include respond(tablet) {
+    .car-card-inf {
+      width: auto;
+
+      img {
+        width: 400px;
+      }
+    }
+  }
+
+  @include respond(desktop) {
+    .car-card-inf {
+      img {
+        width: 600px;
+      }
+    }
+  }
+}
