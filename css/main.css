@@ -9,6 +9,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+h1 {
+  text-align: center;
+}
+
 .logo-nav {
   width: 150px;
 }
