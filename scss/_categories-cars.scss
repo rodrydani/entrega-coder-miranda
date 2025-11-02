@@ -2,35 +2,35 @@
   @include flex-center(row, 20px);
   flex-wrap: wrap;
   margin: 10px;
-
+  
   .car-card-inf {
+     @include glass(12px);
     @include flex-center(column);
     justify-content: flex-start;
     width: 220px;
     padding: 10px;
-    @include box($border-color: $color-border, $padding: 10px, $radius: $radius);
+    @include box($border-color: $color-border, $padding: 10px, $radius: none);
     text-align: center;
-    margin: 10px;
+    margin: 10px 10px 40px;
 
-    img {
-      width: 200px;
-      height: auto;
-      border-radius: $radius;
-    }
+   animation: slideInLeft 2s ease both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%;
+
 
     .descrip-text-car {
       margin: 10px 0;
 
       h3 {
         font-family: $font-main;
-        color: $color-primary;
+        color: $color-light-bg;
         font-size: 1.1rem;
         margin-bottom: 0.3rem;
       }
 
       p {
         font-family: $font-main;
-        color: $color-text;
+        color: $color-light-bg;
         font-size: 0.9rem;
         margin: 0.2rem 0;
       }
@@ -64,8 +64,15 @@
   @include respond(desktop) {
     .car-card-inf {
       img {
-        width: 600px;
+        width: 500px;
       }
     }
+
+     .car-card-inf img {
+     width: 400px;
+     height: 300px;
+     object-fit: cover
+    }
+
   }
 }

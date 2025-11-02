@@ -4,11 +4,21 @@
   box-sizing: border-box;
 }
 
+
+
+
 body {
-  background-color: $color-bg;
   font-family: $font-main;
+background: $background-style !important;
+
+}
+
+main {
+   //background-color: $color-bg;
+     color: aliceblue;
 }
 
 h1{
   text-align: center;
 }
+

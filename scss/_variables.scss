@@ -1,19 +1,38 @@
 $color-bg: #2E2E2E;
-$color-border: #35403A;
+$color-bg-h1: #1a1919;
+$color-border: #252525;
 $color-primary: #3B3936;
-$color-secondary: #FF9933;
+$color-secondary: #FA7F08;
+$color-background-effect:#F24405;
 $color-text: #232625;
 $color-light-bg: #f4f4f4;
-$color-hover: #EF6024;
+$color-hover: #af4213;
+$color-third: #237066;
 $font-main: 'Poppins', sans-serif;
 $max-width: 1200px;
 $radius: 10px;
+$gradient-angle: 135deg;  
+$ellipse-width: 60%; 
+$ellipse-height: 100%;  
+
 
 
 $bp-tablet: 600px;
 $bp-desktop: 1024px;
 
-//flex
+$background-style: linear-gradient(
+      $gradient-angle,
+  $color-bg 0% 33%,
+  $color-background-effect 33% 66%,
+  $color-third 66% 100%);
+                    
+
+@mixin glass($blur: 10px) {
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+}
+
 
 @mixin flex-center($direction: row, $gap: 0) {
     display: flex;
@@ -23,21 +42,21 @@ $bp-desktop: 1024px;
     gap: $gap;
 }
 
-// box
+
 @mixin box($border-color: $color-primary, $padding: 20px, $radius: $radius) {
     border: 3px solid $border-color;
     border-radius: $radius;
     padding: $padding;
 }
 
-// grid
+
 @mixin grid($columns: 1, $gap: 10px) {
     display: grid;
     grid-template-columns: repeat($columns, 1fr);
     gap: $gap;
 }
 
-//query
+
 @mixin respond($breakpoint) {
     @if $breakpoint ==tablet {
         @media (min-width: $bp-tablet) {

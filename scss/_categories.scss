@@ -4,10 +4,10 @@
 }
 
 .categories-box {
-  @include box($color-primary, 25px, $radius); 
+  @include box($color-primary, 25px, $radius:none); 
   text-align: center;
   width: 200px;
-  transition: 0.3s;
+  transition: transform 0.2s ease;
   background-color: $color-secondary;
   a {
     text-decoration: none;
