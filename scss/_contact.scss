@@ -3,6 +3,7 @@
   @include flex-center(column, 30px);
 }
 
+
 .form-contact-elements {
   @include flex-center(column, 20px);
   width: 90%;
@@ -10,15 +11,15 @@
   margin: 0 auto;
 }
 
-.form-cont{
-  
+.form-cont {
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .contact-text {
-      @include glass(12px);
+  @include glass(12px);
   color: $color-text;
   font-size: 18px;
   font-weight: 500;
@@ -33,14 +34,16 @@
 }
 
 form {
-   @include glass(12px);
+  @include glass(12px);
   width: 100%;
   padding: 20px;
   border-radius: $radius;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 2px solid $color-border;
-  
-  input, select, textarea {
+
+  input,
+  select,
+  textarea {
     border-radius: $radius;
   }
 
@@ -63,10 +66,10 @@ form {
   }
 }
 
-.decorative-car{
- position: absolute;
- width: 300px;
- bottom: 5px;
+.decorative-car {
+  position: absolute;
+  width: 300px;
+ 
 }
 
 @include respond(tablet) {
@@ -75,22 +78,17 @@ form {
     justify-content: space-between;
 
 
-    .decorative-car{
-
- width: 500px;
-
-}
+   
   }
 
   .contact-text {
     width: 45%;
- font-size: 18px;
+    font-size: 18px;
     color: $color-light-bg;
   }
 
   form {
     width: 45%;
-   
   }
 }
 
@@ -101,24 +99,21 @@ form {
   }
 
   .contact-text {
-    width: 700px;
-
+    width: 600px;
   }
 
   .form {
     width: 40%;
   }
 
-  .form-cont{
-  
-  justify-content: end;
- 
-}
+  .form-cont {
 
-    .decorative-car{
+    justify-content: end;
+  }
 
- width: 600px;
+  .decorative-car {
 
-}
+    width: 600px;
+  }
 
 }

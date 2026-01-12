@@ -34,6 +34,14 @@
         <!-- Menú -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
+             <li class="nav-item">
+              <button id="open-cart" class="cart_icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </li>
+             <li class="nav-item with-icon">
+                <img class="new-yellow-icon" src="../assets/nuevo.png" alt="icono nuevo amarillo">
+                <a class="nav-link" href="./accesories.html">accessories</a></li>
             <li class="nav-item"><a class="nav-link" href="./categories.html">Categories</a></li>
             <li class="nav-item"><a class="nav-link" href="./financing.html">Financing</a></li>
             <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
@@ -115,6 +123,23 @@
 
   <!--aplico bootstrap js acá -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- CARRITO LATERAL -->
+ 
+
+   <div id="cart-panel">
+  <div class="cart-header">
+    <h2>Cart</h2><i class="fa-solid fa-cart-shopping"></i>
+    <button id="close-cart">X</button>
+  </div>
+
+  <div id="cart-items"></div>
+</div>
+
+
+<script src="../js/accesories-products.js"></script>
+    <script src="../js/simulator.js"></script>
+    <!--  <script src="../js/cart-function.js"></script>
+     -->
 </body>
 
 </html>

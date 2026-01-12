@@ -1,0 +1,176 @@
+/* CONTENEDOR DE LA CARD */
+.accesories-card {
+ 
+  background: rgba(255, 255, 255, 0.158);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  
+  border: 1px solid rgba(255, 255, 255, 0.493);
+  border-radius: 12px;
+
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 220px;
+  padding: 10px;
+  text-align: center;
+
+  margin: 10px 10px 40px;
+
+  overflow: hidden;
+   
+  animation: slideInLeft 1s ease both;
+}
+
+
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.accesories-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  
+}
+
+
+.accesories-card .descrip-text-car {
+  margin: 10px 0;
+}
+
+
+.accesories-card .descrip-text-car h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: #ffffff;
+}
+
+
+.accesories-card .descrip-text-car p {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+  color: #e6e6e6;
+}
+
+
+.accesories-card a.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+
+  border: 1px solid #ff3232;
+  border-radius: 10px;
+
+  background: #ff5c5c;
+  color: white;
+  text-decoration: none;
+
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+
+.accesories-card a.btn:hover {
+  background: #ff1f1f;
+  transform: scale(1.03);
+}
+
+
+@media (max-width: 992px) {
+  .accesories-card {
+    width: auto;
+    
+  }
+
+  .accesories-card img {
+    width: 400px;
+    max-width: 100%;
+  }
+}
+
+.accesories-card img {
+  width: 100%;
+  height: 180px;          
+  object-fit: cover;     
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+
+
+/*--- SLIDER ---*/
+
+
+
+
+.cards-slider {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  min-height: 300px;
+}
+
+
+#accessories-container .col-md-3 {
+  display: none;
+}
+
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.slider-controls button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+#cart-panel {
+ 
+  overflow-y: auto;      
+  padding: 15px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* imagen pequeña */
+.cart-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;   /* importante: no se estira */
+  border-radius: 8px;
+  border: 1px solid #555;
+}
+
+/* textos agrupados */
+.cart-info {
+  flex: 1;
+}
+
+.cart-info p {
+  margin: 2px 0;
+  color: white;
+}
