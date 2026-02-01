@@ -365,7 +365,7 @@ function showAddToCartToast(productName) {
   });
 }
 
-fetch("data/accessories.json")
+fetch("../data/accessories.json")
 
   .then(response => response.json())
   .then(data => {
