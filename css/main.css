@@ -914,4 +914,8 @@ footer .bg-secondary {
   background: #FA7F08;
 }
 
+.swal2-confirm .my-swal-confirm .swal2-styled {
+  background-color: #F24405;
+}
+
 /*# sourceMappingURL=main.css.map */
