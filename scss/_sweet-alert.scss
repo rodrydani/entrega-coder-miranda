@@ -1,10 +1,18 @@
 /* SweetAlert Toast */
-.swal2-popup.swal2-toast .my-swal{
+.swal2-popup.swal2-toast.my-swal {
   @include glass(14px);
   border-radius: 18px;
   padding: 1rem 1.4rem;
   color: white;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.swal2-popup.my-swal {
+  @include glass(14px);
+  border-radius: 18px;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
 /* Texto */

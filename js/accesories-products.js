@@ -327,12 +327,12 @@ if (checkoutBtn) {
       confirmButtonText: "Buy now",
       cancelButtonText: "Cancel",
       customClass: {
-    popup: "my-swal",
-    title: "my-swal-title",
-    confirmButton: "my-swal-confirm",
-    cancelButton: "my-swal-cancel"
-  }
-    
+        popup: "my-swal",
+        title: "my-swal-title",
+        confirmButton: "my-swal-confirm",
+        cancelButton: "my-swal-cancel"
+      }
+
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
