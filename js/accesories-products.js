@@ -325,7 +325,14 @@ if (checkoutBtn) {
       icon: "question",
       showCancelButton: true,
       confirmButtonText: "Buy now",
-      cancelButtonText: "Cancel"
+      cancelButtonText: "Cancel",
+      customClass: {
+    popup: "my-swal",
+    title: "my-swal-title",
+    confirmButton: "my-swal-confirm",
+    cancelButton: "my-swal-cancel"
+  }
+    
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
