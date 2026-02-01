@@ -19,6 +19,11 @@ function addToCart(id) {
 
   const product = accessories.find(item => item.id === id);
 
+  if (!product) {
+  console.error("Product not found:", id);
+  return;
+}
+
   const itemInCart = cart.find(item => item.id === id);
 
   if (itemInCart) {
@@ -58,7 +63,7 @@ function renderCart() {
       </button>
       <hr>
     `;
-
+ 
     cartItems.appendChild(div);
   });
 }
@@ -73,3 +78,4 @@ document.addEventListener("click", e => {
     renderCart();
   }
 });
+

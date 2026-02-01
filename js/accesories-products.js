@@ -1,6 +1,6 @@
 /*----- JS DE ACCESORIES -----*/
 
-const accessories = [
+/*const accessories = [
   {
     id: 1,
     name: "Motor oil 5W-30",
@@ -82,13 +82,14 @@ const accessories = [
     image: "../assets/accesories/jump-cable.png",
     description: "Heavy-duty jumper cables, 3 meters long."
   },
-  { id: 10, name: "Portable tire inflator", 
+  {
+    id: 10, name: "Portable tire inflator",
     category: "Maintenance",
-     price: 42,
-     stock: 8,
-     image: "../assets/accesories/tire_inflator.png",
-     description: "Electric air compressor for car tires."
-     },
+    price: 42,
+    stock: 8,
+    image: "../assets/accesories/tire_inflator.png",
+    description: "Electric air compressor for car tires."
+  },
   { id: 11, name: "Cleaning microfiber cloth", category: "Cleaning", price: 6, stock: 60, image: "../assets/accesories/Cleaning microfiber cloth.png", description: "Soft microfiber cloth, scratch-free cleaning." },
   { id: 12, name: "Dashboard polish spray", category: "Cleaning", price: 14, stock: 22, image: "../assets/accesories/phone-holder.png", description: "Dashboard protector and polish spray." },
   { id: 13, name: "Car vacuum cleaner", category: "Cleaning", price: 48, stock: 9, image: "../assets/accesories/vacuum.png", description: "Compact handheld vacuum cleaner for car interiors." },
@@ -100,7 +101,14 @@ const accessories = [
   { id: 19, name: "Emergency warning triangle", category: "Safety", price: 20, stock: 15, image: "../assets/accesories/warning_triangle.png", description: "Reflective roadside emergency warning triangle." },
   { id: 20, name: "Car washing kit", category: "Cleaning", price: 35, stock: 10, image: "../assets/accesories/wash_kit.png", description: "Complete exterior washing kit with shampoo and sponge." }
 
-];
+];*/
+
+/*---- JS CON JSON ----*/
+
+let accessories = [];
+
+
+
 
 /*----- RENDER DE PRODUCTOS -----*/
 
@@ -135,7 +143,7 @@ function renderAccessories(arr) {
   });
 }
 
-renderAccessories(accessories);
+
 
 /*----------- SLIDER -----------*/
 
@@ -175,7 +183,7 @@ if (next && prev) {
   });
 }
 
-renderSlider();
+
 
 /*----------- CARRITO -----------*/
 
@@ -191,6 +199,12 @@ document.addEventListener("click", e => {
     const id = Number(e.target.dataset.id);
 
     const product = accessories.find(item => item.id === id);
+
+    if (!product) {
+      console.error("Product not found:", id);
+      return;
+    }
+
     const found = cart.find(item => item.id === id);
 
     if (found) {
@@ -201,8 +215,16 @@ document.addEventListener("click", e => {
 
     saveCart();
     renderCart();
+    // notification
+    showAddToCartToast(product.name);
   }
 });
+
+function calculateTotal() {
+  return cart.reduce((acc, item) => {
+    return acc + item.price * item.quantity;
+  }, 0);
+}
 
 /*----------- RENDER UNIFICADO DEL CARRITO -----------*/
 
@@ -210,12 +232,19 @@ function renderCart() {
   const cartContent = document.querySelector(".cart-content");
   const cartItems = document.getElementById("cart-items");
 
+
   if (!cartContent && !cartItems) return;
 
   if (cart.length === 0) {
     const empty = `<p>There are no products in the cart.</p>`;
     if (cartContent) cartContent.innerHTML = empty;
     if (cartItems) cartItems.innerHTML = empty;
+
+    const totalElement = document.getElementById("cart-total");
+    if (totalElement) {
+      totalElement.textContent = "Total: US$ 0";
+    }
+
     return;
   }
 
@@ -242,6 +271,13 @@ function renderCart() {
 
   if (cartContent) cartContent.innerHTML = html;
   if (cartItems) cartItems.innerHTML = html;
+
+  const totalElement = document.getElementById("cart-total");
+
+  if (totalElement) {
+    totalElement.textContent = `Total: US$ ${calculateTotal()}`;
+  }
+
 }
 
 /* eliminar item */
@@ -259,3 +295,76 @@ document.addEventListener("click", e => {
 });
 
 renderCart();
+
+/*----------- CHECKOUT -----------*/
+
+const checkoutBtn = document.getElementById("checkout-btn");
+function getCartSummary() {
+  return cart.map(item => `
+    <p>
+      ${item.name} x${item.quantity} — 
+      <strong>US$ ${item.price * item.quantity}</strong>
+    </p>
+  `).join("");
+}
+if (checkoutBtn) {
+  checkoutBtn.addEventListener("click", () => {
+    if (cart.length === 0) return;
+
+    const cartSummary = getCartSummary();
+
+    Swal.fire({
+      title: "Confirm purchase",
+      html: `
+      <div style="text-align:left">
+        ${cartSummary}
+        <hr>
+        <p><strong>${document.getElementById("cart-total").textContent}</strong></p>
+      </div>
+    `,
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Buy now",
+      cancelButtonText: "Cancel"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Purchase completed",
+          text: "Thank you for your order!",
+          icon: "success"
+        });
+
+        cart = [];
+        saveCart();
+        renderCart();
+      }
+    });
+  });
+
+}
+
+function showAddToCartToast(productName) {
+  Swal.fire({
+    toast: true,
+    position: "bottom-end",
+    icon: "success",
+    html: `<span class="toast-text">${productName} added to cart</span>`,
+    showConfirmButton: false,
+    timer: 1000,
+    timerProgressBar: true,
+    customClass: {
+      popup: "my-swal"
+    }
+  });
+}
+
+fetch("./data/accessories.json")
+  .then(response => response.json())
+  .then(data => {
+    accessories = data;
+    renderAccessories(accessories);
+    renderSlider();
+  })
+  .catch(error => {
+    console.error("Error loading accessories:", error);
+  });

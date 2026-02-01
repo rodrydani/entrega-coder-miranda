@@ -1,0 +1,25 @@
+/* SweetAlert Toast */
+.swal2-popup.swal2-toast {
+  @include glass(14px);
+  border-radius: 18px;
+  padding: 1rem 1.4rem;
+  color: white;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Texto */
+.swal2-toast .swal2-html-container {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Icono */
+.swal2-toast .swal2-icon {
+  margin-right: 0.6rem;
+}
+
+/* Progress bar */
+.swal2-toast .swal2-timer-progress-bar {
+  background: #FA7F08;
+}
